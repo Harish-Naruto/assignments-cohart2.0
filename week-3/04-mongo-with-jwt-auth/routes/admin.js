@@ -4,7 +4,9 @@ const bcrypt = require("bcrypt")
 const {Admin, Course} = require("../db/index")
 const router = Router();
 const jwt = require("jsonwebtoken");
-const {jwt_secret}  = require("../config");
+require("dotenv").config();
+
+const jwt_secret = process.env.jwt_secret;
 
 // Admin Routes
 router.post('/signup', async (req, res) => {

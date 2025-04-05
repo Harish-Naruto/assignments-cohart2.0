@@ -4,7 +4,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const router = Router();
 const userMiddleware = require("../middleware/user");
-const {jwt_secret}  = require("../config");
+require("dotenv").config();
+const jwt_secret = process.env.jwt_secret
 
 // User Routes
 router.post('/signup', async (req, res) => {
